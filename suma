@@ -1,0 +1,40 @@
+from tkinter import *
+import tkinter as tk
+
+def limpiarVt():  
+    for widget in vt.winfo_children():  
+        widget.destroy()
+
+def Sumar ():
+    limpiarVt()
+
+    def S():
+        r.set(float(n1.get())+float(n2.get()))
+
+    n1 = StringVar ()
+    n2 = StringVar ()
+    r = StringVar ()
+
+    Label(vt, text="Ingrese un numero", font=("Arial", 16)).pack(pady=20)
+    Entry(vt,textvariable=n1).pack()
+
+    Label(vt, text="Ingrese otro numero", font=("Arial", 16)).pack(pady=20)
+    Entry(vt, textvariable=n2).pack()
+
+    Label(vt, text="Resultado", font=("Arial", 16)).pack(pady=20)
+    Entry(vt,textvariable=r).pack()
+
+    Button (vt, text="Sumar", font=("Arial", 16), width=8, command=S).pack(pady=20)
+
+vt = tk.Tk ()
+vt.title ("calculadora")
+vt.geometry ("500x350")
+
+Label (vt, text="Menu principal", font=("Arial", 22)).pack(pady=30)
+
+b1 = Button (vt, text="Graficar una funcion", font=("Arial", 16),width=20).pack(pady=10)
+b2 = Button (vt, text="Graficar puntos especificos sobre la funcion", font=("Arial", 16),width=37).pack(pady=10)
+b3 = Button (vt, text="Encontrar raices aproximadas de lafuncion", font=("Arial", 16),width=35).pack(pady=10)
+b4 = Button (vt, text="Sumar", font=("Arial", 16),width=8, command= Sumar).pack(pady=10)
+
+vt.mainloop()
